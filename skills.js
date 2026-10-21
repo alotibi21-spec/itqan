@@ -15,7 +15,7 @@ function skMerge(force){const st=S.settings;if(!force&&(st.skV||0)>=SKV)return;s
  seeds().forEach(x=>{if(!have.has(x.sid)&&!dead.has(x.sid))S.skills.push({id:uid(),...x,hide:''})});
  /* 1.6.0: إزالة المهارات الأصلية المتقاعدة (المكررة بين الطبعات) إن لم تُعدَّل ولم تُسجَّل لها نتائج */
  if((st.skV||0)<6){const cur=new Set(seeds().map(x=>x.sid)),used=new Set([...(S.results||[]).map(r=>r.skill),...(S.attempts||[]).map(a=>a.skill)].filter(Boolean));
-  S.skills=S.skills.filter(s=>!(s.sid&&!cur.has(s.sid)&&s.src!==NAFS_TAG&&s.sid===sidOf(s.subject,s.grade,s.unit,s.name)&&!used.has(s.name)))}
+  S.skills=S.skills.filter(s=>!(s.sid&&!cur.has(s.sid)&&s.src!==NAFS_TAG&&!s.hide&&s.sid===sidOf(s.subject,s.grade,s.unit,s.name)&&!used.has(s.name)))}
  st.skV=SKV}
 function unitKey(sub,g){return sub+'||'+g}
 function unitsOf(sub,g){const st=S.settings;const L=[];const add=u=>{if(u&&!L.includes(u))L.push(u)};
