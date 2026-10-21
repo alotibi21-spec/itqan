@@ -1,6 +1,6 @@
 import json,collections
 out=[];cov=collections.OrderedDict()
-for f in ['ar.txt','math.txt','sci.txt','en.txt','isl.txt','soc.txt','dig.txt','ct.txt']:
+for f in ['ar.txt','math.txt','sci.txt','en.txt','isl.txt','soc.txt','dig.txt','ct.txt','sec.txt']:
   hdr=None;unit=None
   for ln in open(f,encoding='utf-8'):
     ln=ln.rstrip('\n').strip()
