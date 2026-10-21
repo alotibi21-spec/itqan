@@ -1,6 +1,6 @@
 /*! منصة إتقان لتحسين نواتج التعلم — © 1448هـ / 2026م عبدالله خالد العتيبي. جميع الحقوق محفوظة — All Rights Reserved. يُمنع النسخ أو التعديل أو إعادة النشر دون إذن كتابي. انظر LICENSE. */
 'use strict';
-const VER='1.0.0';
+const VER='1.0.1';
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const AR=(n,d=0)=>n==null||isNaN(n)?'—':Number(n).toLocaleString('ar-SA',{maximumFractionDigits:d});
@@ -33,7 +33,7 @@ const DB={db:null,open(){return new Promise((ok,no)=>{const r=indexedDB.open('it
  snaps(){return this.tx('snaps','readonly',s=>s.getAll())},addSnap(o){return this.tx('snaps','readwrite',s=>s.put(o))},delSnap(t){return this.tx('snaps','readwrite',s=>s.delete(t))}};
 const LISTS={subjects:'المواد الدراسية',grades:'الصفوف',classes:'الفصول (الشُّعب)',stages:'المراحل / الأقسام',periods:'الفترات الدراسية',teachers:'المعلمون'};
 function blank(){return{v:1,settings:{school:'',office:'',principal:'',logo:'',sign:'',stamp:'',user:{name:'',mobile:'',email:'',job:''},role:'',theme:'',pass:50,exc:90,master:80,period:'',
- lists:{subjects:['لغتي','الرياضيات','العلوم','اللغة الإنجليزية','الدراسات الإسلامية','الدراسات الاجتماعية'],grades:['الأول','الثاني','الثالث','الرابع','الخامس','السادس'],classes:[],stages:['ابتدائي','متوسط','ثانوي'],periods:['الفصل الدراسي الأول','الفصل الدراسي الثاني'],teachers:[]},sample:false,started:false},
+ lists:{subjects:[],grades:[],classes:[],stages:['ابتدائي','متوسط','ثانوي'],periods:['الفصل الدراسي الأول','الفصل الدراسي الثاني'],teachers:[]},sample:false,started:false},
  students:[],skills:[],results:[],marks:[],questions:[],attempts:[],points:[],reflections:[],visits:[],pacts:[],tests:[],practices:[],sent:[]}}
 let S=blank();let UNDO=[];
 let saveT=null;function save(){clearTimeout(saveT);saveT=setTimeout(async()=>{try{await DB.put('state',S);autoSnap()}catch(e){toast('تعذّر الحفظ: '+e.message)}},250)}
@@ -56,7 +56,7 @@ const C={
  tests:{t:'مواعيد الاختبارات الوطنية',ic:'⏳',uk:['name'],f:[{k:'name',l:'اسم الاختبار',req:1,al:['الاختبار']},{k:'date',l:'التاريخ',t:'date',req:1},{k:'subject',l:'المادة',ls:'subjects'},{k:'grade',l:'الصف',ls:'grades'}]},
  practices:{t:'الممارسات المتميزة',ic:'🌟',uk:['title'],f:[{k:'title',l:'عنوان الممارسة',req:1,al:['الممارسة','العنوان']},{k:'teacher',l:'صاحب الممارسة',ls:'teachers'},{k:'subject',l:'المادة',ls:'subjects'},{k:'before',l:'المؤشر قبل ٪',t:'num',al:['قبل']},{k:'after',l:'المؤشر بعد ٪',t:'num',al:['بعد']},{k:'date',l:'التاريخ',t:'date'},{k:'desc',l:'وصف الممارسة',t:'ta',al:['الوصف']}]}
 };
-function opts(f){if(f.opts)return f.opts;if(f.ls)return S.settings.lists[f.ls]||[];if(f.ref)return[...new Set(S[f.ref].map(x=>x.name))];return[]}
+function opts(f){if(f.opts)return f.opts;if(f.ls==='subjects')return subjOpts();if(f.ls==='grades')return gradeOpts();if(f.ls)return S.settings.lists[f.ls]||[];if(f.ref)return[...new Set(S[f.ref].map(x=>x.name))];return[]}
 function fmt(f,v){if(v==null||v==='')return'<span class="muted">—</span>';if(f.t==='date')return esc(hij(v));if(f.t==='num')return AR(v,1);if(f.t==='ta')return esc(String(v).slice(0,90))+(String(v).length>90?'…':'');return esc(v)}
 function ensureRefs(o,fs){for(const f of fs){const v=o[f.k];if(v==null||v==='')continue;if(f.ls){const L=S.settings.lists[f.ls];if(!L.includes(v))L.push(v)}
   if(f.ref==='students'&&!S.students.some(s=>s.name===v))S.students.push({id:uid(),name:v,cls:o.cls||''});
@@ -64,6 +64,52 @@ function ensureRefs(o,fs){for(const f of fs){const v=o[f.k];if(v==null||v==='')c
 function clean(key,o){const out={};for(const f of C[key].f){let v=o[f.k];if(f.t==='num'){v=toNum(v);if(v!=null){if(f.min!=null)v=Math.max(f.min,v);if(f.max!=null)v=Math.min(f.max,v)}}else if(f.t==='date')v=v?parseDate(v)||v:'';else if(f.t==='tel')v=normMob(v);else v=String(v??'').trim();out[f.k]=v}return out}
 const normMob=v=>String(v||'').replace(/[٠-٩]/g,d=>'٠١٢٣٤٥٦٧٨٩'.indexOf(d)).replace(/[^\d+]/g,'').replace(/^\+?966/,'0').replace(/^5/,'05');
 const missing=(key,o)=>C[key].f.filter(f=>f.req&&(o[f.k]==null||o[f.k]==='')).map(f=>f.l);
+
+/* ---------- المنهج: المواد حسب المرحلة/الصف/المسار — المصدر: دليل الخطط الدراسية (الإصدار الخامس 1447هـ) وزارة التعليم ---------- */
+const CUR_SRC='دليل الخطط الدراسية — الإصدار الخامس (1447هـ/2025م)، وزارة التعليم / المركز الوطني للمناهج';
+const P13=['القرآن الكريم والدراسات الإسلامية','اللغة العربية','الرياضيات','العلوم','اللغة الإنجليزية','التربية الفنية','التربية البدنية والدفاع عن النفس','المهارات الحياتية والأسرية'];
+const P46=['القرآن الكريم والدراسات الإسلامية','اللغة العربية','الدراسات الاجتماعية','الرياضيات','العلوم','اللغة الإنجليزية','المهارات الرقمية','التربية الفنية','التربية البدنية والدفاع عن النفس','المهارات الحياتية والأسرية'];
+const M12=P46;const M3=[...P46,'التفكير الناقد'];
+const KG=['القرآن الكريم والتربية الإسلامية','الوطنية والدراسات الاجتماعية','التطور الاجتماعي والعاطفي','اللغة والتواصل','العمليات المعرفية والمعلومات العامة','الصحة والتطور البدني'];
+const S1=['القرآن الكريم وتفسيره','الرياضيات','اللغة الإنجليزية','التقنية الرقمية','الأحياء','الكيمياء','الفيزياء','علم البيئة','الكفايات اللغوية','الحديث','المعرفة المالية','الدراسات الاجتماعية','التفكير الناقد','التربية المهنية','التربية الصحية والبدنية'];
+const SCI2=['الرياضيات','اللغة الإنجليزية','الكيمياء','الأحياء','الفيزياء','التوحيد','الكفايات اللغوية'],SCI3=['الرياضيات','اللغة الإنجليزية','الكيمياء','الفيزياء','علوم الأرض والفضاء','الفقه','الدراسات الأدبية'];
+const TAIL2=['اللياقة والثقافة الصحية'],TAIL3=['المهارات الحياتية','التربية الصحية والبدنية','البحث ومصادر المعلومات'];
+const TRACKS=['العام','علوم الحاسب والهندسة','الصحة والحياة','إدارة الأعمال','الشرعي'];
+const CUR0={
+ 'الطفولة المبكرة (رياض الأطفال)':{note:'مجالات التعلم في مرحلة رياض الأطفال',g:{'المستوى الأول (٣–٤ سنوات)':KG,'المستوى الثاني (٤–٥ سنوات)':KG,'المستوى الثالث (٥–٦ سنوات)':KG}},
+ 'الابتدائية':{g:{'الأول الابتدائي':P13,'الثاني الابتدائي':P13,'الثالث الابتدائي':P13,'الرابع الابتدائي':P46,'الخامس الابتدائي':P46,'السادس الابتدائي':P46}},
+ 'المتوسطة':{g:{'الأول المتوسط':M12,'الثاني المتوسط':M12,'الثالث المتوسط':M3}},
+ 'الثانوية (نظام المسارات)':{g:{'الأول الثانوي (السنة الأولى المشتركة)':S1,
+  'الثاني الثانوي':{'العام':[...SCI2,'التقنية الرقمية','التاريخ','الفنون',...TAIL2],'علوم الحاسب والهندسة':[...SCI2,'علم البيانات','إنترنت الأشياء','الهندسة',...TAIL2],'الصحة والحياة':[...SCI2,'التقنية الرقمية','مبادئ العلوم الصحية',...TAIL2],
+   'إدارة الأعمال':['اللغة الإنجليزية','التوحيد','التفسير','الكفايات اللغوية','الدراسات اللغوية','صناعة القرار في الأعمال','مقدمة في الأعمال','مبادئ الاقتصاد','الإدارة المالية','التقنية الرقمية','التاريخ','الفنون',...TAIL2],
+   'الشرعي':['القرآن الكريم','اللغة الإنجليزية','التوحيد 1','التوحيد 2','الحديث','القراءات 1','القراءات 2','علوم القرآن','التفسير','الكفايات اللغوية','الدراسات اللغوية','التقنية الرقمية','التاريخ','الفنون',...TAIL2]},
+  'الثالث الثانوي':{'العام':[...SCI3,'الدراسات النفسية والاجتماعية','التقنية الرقمية','المواطنة الرقمية','الجغرافيا',...TAIL3,'المجال الاختياري'],'علوم الحاسب والهندسة':[...SCI3,'الذكاء الاصطناعي','الأمن السيبراني','هندسة البرمجيات','التصميم الهندسي',...TAIL3,'مشروع التخرج'],
+   'الصحة والحياة':[...SCI3,'الرعاية الصحية','أنظمة جسم الإنسان','الإحصاء',...TAIL3,'مشروع التخرج'],
+   'إدارة الأعمال':['اللغة الإنجليزية','الفقه','الدراسات الأدبية','الدراسات النفسية والاجتماعية','الدراسات البلاغية والنقدية','مبادئ الإدارة','إدارة الفعاليات','تخطيط الحملات التسويقية','السكرتارية والإدارة المكتبية','مبادئ القانون','تطبيقات في القانون','المواطنة الرقمية','الإحصاء','الجغرافيا',...TAIL3,'مشروع التخرج'],
+   'الشرعي':['القرآن الكريم','اللغة الإنجليزية','التفسير','الفقه 1','الفقه 2','أصول الفقه','مصطلح الحديث','الفرائض','الدراسات الأدبية','الدراسات النفسية والاجتماعية','الدراسات البلاغية والنقدية','مبادئ القانون','تطبيقات في القانون','المواطنة الرقمية','الجغرافيا',...TAIL3,'مشروع التخرج']}}}};
+const ELECT=['الإسعافات الأولية','فن تصميم الأزياء','الكتابة الوظيفية والإبداعية','التنمية المستدامة','المهارات الإدارية','التصميم الرقمي','الذكاء الاصطناعي','السياحة والضيافة','الأمن السيبراني'];
+const clone=o=>JSON.parse(JSON.stringify(o));
+function curMerge(){const st=S.settings;if(!st.cur)st.cur={};for(const[sg,v]of Object.entries(CUR0)){if(!st.cur[sg])st.cur[sg]=clone(v);else for(const[g,x]of Object.entries(v.g)){if(!st.cur[sg].g[g])st.cur[sg].g[g]=clone(x);else if(!Array.isArray(x)){for(const[t,L]of Object.entries(x))if(!st.cur[sg].g[g][t])st.cur[sg].g[g][t]=clone(L)}}}
+ if(!st.ctx)st.ctx={stage:'',grade:'',track:''};if(!st.hidden)st.hidden=[]}
+const isTr=x=>x&&!Array.isArray(x);
+function curSubs(stage,grade,track){const C0=S.settings.cur||{};const out=[];const addG=x=>{if(Array.isArray(x))out.push(...x);else if(x)Object.entries(x).forEach(([t,L])=>{if(!track||t===track)out.push(...L)})};
+ const stages=stage?[stage]:Object.keys(C0);stages.forEach(s=>{const G=(C0[s]||{}).g||{};(grade&&G[grade]?[grade]:grade?[]:Object.keys(G)).forEach(g=>addG(G[g]))});return[...new Set(out)]}
+function allCurSubs(){return new Set(curSubs('','',''))}
+function subjOpts(){const c=S.settings.ctx||{};const hid=new Set(S.settings.hidden||[]);const extra=S.settings.lists.subjects.filter(x=>!allCurSubs().has(x));const base=curSubs(c.stage||'',c.stage?c.grade:'',c.stage?c.track:'');return[...new Set([...base,...extra])].filter(x=>!hid.has(x))}
+function gradeOpts(){const c=S.settings.ctx||{};const C0=S.settings.cur||{};const g=c.stage?Object.keys((C0[c.stage]||{}).g||{}):Object.values(C0).flatMap(v=>Object.keys(v.g));return[...new Set([...g,...S.settings.lists.grades])]}
+function ctxLabel(){const c=S.settings.ctx||{};return[c.stage,c.grade,c.track&&('مسار '+c.track)].filter(Boolean).join(' · ')||'كل المراحل'}
+function ctxPicker(pre='cx'){const c=S.settings.ctx,C0=S.settings.cur;const G=c.stage?Object.keys(C0[c.stage].g):[];const tr=c.stage&&c.grade&&isTr(C0[c.stage].g[c.grade]);
+ return`<div class="fgrid"><label class="f">المرحلة<select data-ctx="stage"><option value="">كل المراحل</option>${Object.keys(C0).map(s=>`<option ${s===c.stage?'selected':''}>${esc(s)}</option>`).join('')}</select></label>
+ <label class="f">الصف<select data-ctx="grade" ${c.stage?'':'disabled'}><option value="">كل الصفوف</option>${G.map(g=>`<option ${g===c.grade?'selected':''}>${esc(g)}</option>`).join('')}</select></label>
+ ${tr?`<label class="f">المسار<select data-ctx="track"><option value="">كل المسارات</option>${Object.keys(C0[c.stage].g[c.grade]).map(t=>`<option ${t===c.track?'selected':''}>${esc(t)}</option>`).join('')}</select></label>`:''}</div>`}
+function subjCard(){const c=S.settings.ctx,hid=new Set(S.settings.hidden);const L=c.stage?curSubs(c.stage,c.grade,c.track):[];const extra=S.settings.lists.subjects.filter(x=>!allCurSubs().has(x));
+ return`<div class="card" id="subjCard"><h3>📚 المواد الدراسية حسب المرحلة والصف والمسار</h3><p class="small muted">اختر مرحلتك وصفك (ومسارك للثاني والثالث الثانوي): ستظهر هذه المواد فقط في كل قوائم اختيار المادة. يمكنك إخفاء مادة أو إعادة تسميتها أو إضافة مادة.</p>${ctxPicker()}
+ ${c.stage?`<div class="tw" style="margin-top:10px"><table><tr><th>المادة</th><th>الظهور</th><th class="acts">إجراءات</th></tr>${L.map(s=>`<tr><td>${esc(s)}</td><td><label><input type="checkbox" data-hide="${esc(s)}" ${hid.has(s)?'':'checked'}> ظاهرة</label></td><td class="acts"><button class="btn ghost sm" data-act="subRen" data-s="${esc(s)}">✏️ إعادة تسمية</button></td></tr>`).join('')}</table></div>
+ ${c.stage.startsWith('الثانوية')&&c.grade.startsWith('الثالث')&&(!c.track||c.track==='العام')?`<p class="small">مواد المجال الاختياري (المسار العام): ${ELECT.map(esc).join('، ')}</p>`:''}`:'<p class="muted small">اختر المرحلة لعرض موادها.</p>'}
+ <div class="acts" style="margin-top:10px"><input id="subNew" placeholder="مادة جديدة…" aria-label="مادة جديدة"><button class="btn sm" data-act="subAdd">＋ إضافة للصف المحدد</button></div>${extra.length?`<p class="small">مواد أضفتها أو استوردتها: ${extra.map(esc).join('، ')}</p>`:''}
+ <p class="small muted">📖 المصدر: ${CUR_SRC}. ملاحظة: مدارس تحفيظ القرآن الكريم تضيف مادة «التجويد» — أضفها عند الحاجة.</p></div>`}
+function subAdd(){const v=($('#subNew').value||'').trim();if(!v){toast('اكتب اسم المادة');return}const c=S.settings.ctx;mut(()=>{if(c.stage&&c.grade){const G=S.settings.cur[c.stage].g;let x=G[c.grade];if(isTr(x)){(c.track?[c.track]:Object.keys(x)).forEach(t=>{if(!x[t].includes(v))x[t].push(v)})}else if(!x.includes(v))x.push(v)}else if(!S.settings.lists.subjects.includes(v))S.settings.lists.subjects.push(v);S.settings.hidden=S.settings.hidden.filter(h=>h!==v)},'✓ أُضيفت المادة')}
+function subRen(old){const v=(prompt('الاسم الجديد للمادة:',old)||'').trim();if(!v||v===old)return;mut(()=>{const walk=o=>{for(const k in o){if(Array.isArray(o[k]))o[k]=o[k].map(x=>x===old?v:x);else if(o[k]&&typeof o[k]==='object')walk(o[k])}};walk(S.settings.cur);S.settings.lists.subjects=S.settings.lists.subjects.map(x=>x===old?v:x)},'✓ أُعيدت التسمية (السجلات السابقة لم تتغير)')}
 
 /* ---------- dialogs ---------- */
 function fieldHtml(f,v,pre='f_'){const id=pre+f.k,val=v??'';const mic=`<button type="button" class="btn ghost sm mic no-print" data-act="dictate" data-for="${id}" aria-label="إملاء صوتي">🎤</button>`;
@@ -153,7 +199,7 @@ function impGo(){const{key}=IMP,R=buildImp();closeDlg('ok');mut(()=>{R.ok.forEac
 /* ---------- bulk per class ---------- */
 function bulk(key){const cls=S.settings.lists.classes;const isR=key==='results';
  dlg(`<h3>📋 إدخال جماعي لفصل — ${esc(C[key].t)}</h3><div class="fgrid"><label class="f">الفصل<select id="bkCls">${cls.length?cls.map(c=>`<option>${esc(c)}</option>`).join(''):'<option value="">كل الطلاب</option>'}</select></label>
- ${isR?`<label class="f">المهارة<input id="bkSk" list="bkSkL" autocomplete="off"><datalist id="bkSkL">${S.skills.map(s=>`<option value="${esc(s.name)}">`).join('')}</datalist></label>`:`<label class="f">المادة<input id="bkSk" list="bkSkL" autocomplete="off"><datalist id="bkSkL">${S.settings.lists.subjects.map(s=>`<option value="${esc(s)}">`).join('')}</datalist></label>`}
+ ${isR?`<label class="f">المهارة<input id="bkSk" list="bkSkL" autocomplete="off"><datalist id="bkSkL">${S.skills.map(s=>`<option value="${esc(s.name)}">`).join('')}</datalist></label>`:`<label class="f">المادة<input id="bkSk" list="bkSkL" autocomplete="off"><datalist id="bkSkL">${subjOpts().map(s=>`<option value="${esc(s)}">`).join('')}</datalist></label>`}
  <label class="f">التاريخ<input id="bkDate" type="date" value="${today()}"></label></div>
  <div class="acts" style="margin:10px 0"><button type="button" class="btn gold sm mic" data-act="bulkVoice">🎤 إملاء الدرجات</button><span class="small muted">قل: «أحمد تسعين، خالد خمسة وسبعين…»</span></div><div id="bkList"></div>
  <div class="dlg-acts"><button type="button" class="btn" data-act="bulkSave" data-k="${key}">💾 حفظ الكل</button><button class="btn ghost" value="cancel">إلغاء</button></div>`);
@@ -223,7 +269,7 @@ function buildNav(){const A=allowed(),cur=(location.hash||'#home').slice(1).spli
  MODS.filter(m=>A.includes(m[0])).forEach(m=>{if(m[3]&&m[3]!==g){g=m[3];h+=`<div class="sep">${esc(g)}</div>`}h+=`<a href="#${m[0]}" data-v="${m[0]}" class="${cur===m[0]?'on':''}">${m[1]} ${esc(m[2])}</a>`});
  if(['screen','student'].includes(S.settings.role))h+=`<a href="#" data-act="exitRole">🔓 الخروج من ${esc(ROLES[S.settings.role][0])}</a>`;
  h+=`<div class="ver">الإصدار ${VER}<br>🔒 البيانات محفوظة على هذا الجهاز فقط</div>`;$('#nav').innerHTML=h;$('#navClose').onclick=()=>setNav(false);
- $('#roleInd').textContent=S.settings.role?ROLES[S.settings.role][0]:'';$('#subTtl').textContent=S.settings.school||'منصة إتقان لتحسين نواتج التعلم'}
+ $('#roleInd').textContent=(S.settings.role?ROLES[S.settings.role][0]+' · ':'')+ctxLabel();$('#subTtl').textContent=S.settings.school||'منصة إتقان لتحسين نواتج التعلم'}
 const V={};
 const head=(t,p,acts='')=>`<div class="head"><div><h2>${t}</h2>${p?`<p class="muted small">${p}</p>`:''}</div><div class="acts no-print">${acts}<button class="btn ghost sm" data-act="print">🖨️ طباعة</button></div></div>`;
 const tip=t=>`<div class="tip">💡 ${t}</div>`;
@@ -436,6 +482,7 @@ V.settings=()=>{const st=S.settings;const fld=(k,l,v,t='')=>`<label class="f">${
  `<div class="card"><h3>👤 الدور (الوضع المبسّط)</h3><div class="acts">${Object.entries(ROLES).map(([k,v])=>`<button class="btn ${st.role===k?'':'ghost'} sm" data-act="setRole" data-r="${k}">${esc(v[0])}</button>`).join('')}</div><p class="small muted">يعرض كل دور الأقسام المناسبة له فقط. «شاشة العرض» و«وضع الطالب» يقفلان الجهاز على قسم واحد.</p></div>
  <div class="card"><h3>🏫 المدرسة والمستخدم</h3><div class="fgrid">${fld('school','اسم المدرسة',st.school)}${fld('office','مكتب التعليم',st.office)}${fld('principal','اسم مدير المدرسة',st.principal)}${fld('user.name','اسمك',st.user.name)}${fld('user.job','صفتك',st.user.job)}${fld('user.mobile','جوالك',st.user.mobile,'inputmode="tel" dir="ltr"')}${fld('user.email','بريدك',st.user.email,'type="email" dir="ltr"')}
  <label class="f">الفترة الحالية<select data-s="period"><option value=""></option>${st.lists.periods.map(p=>`<option ${p===st.period?'selected':''}>${esc(p)}</option>`).join('')}</select></label></div><div class="grid g3" style="margin-top:10px">${img('logo','شعار المدرسة')}${img('sign','توقيع المدير')}${img('stamp','ختم المدرسة')}</div></div>
+`+subjCard()+`
  <div class="card"><h3>🎚️ الحدود</h3><div class="fgrid">${fld('master','حد الإتقان ٪',st.master,'inputmode="decimal"')}${fld('pass','درجة النجاح ٪',st.pass,'inputmode="decimal"')}${fld('exc','درجة التميز ٪',st.exc,'inputmode="decimal"')}</div></div>
  <div class="card"><h3>📝 القوائم القابلة للتعديل</h3><p class="small muted">عنصر في كل سطر. تُضاف العناصر الجديدة تلقائياً أيضاً عند الإدخال أو الاستيراد.</p><div class="fgrid">${Object.entries(LISTS).map(([k,l])=>`<label class="f">${l} (${AR(st.lists[k].length)})<textarea data-list="${k}" rows="5">${esc(st.lists[k].join('\n'))}</textarea></label>`).join('')}</div>
  <p class="small">قوائم أخرى: <a href="#skills">المهارات ونواتج التعلم</a> · <a href="#ops">مواعيد الاختبارات</a> · <a href="#students">الطلاب</a></p></div>
@@ -484,7 +531,7 @@ function loadSample(){confirmDlg('سيتم استبدال البيانات ال�
 function clearSample(){confirmDlg('حذف جميع البيانات التجريبية والبدء من جديد؟').then(ok=>{if(!ok)return;mut(()=>{const k=S.settings;S=blank();S.settings.role=k.role;S.settings.theme=k.theme;S.settings.started=k.started},'تم حذف البيانات التجريبية')})}
 
 /* ---------- router ---------- */
-function render(){const h=(location.hash||'#home').slice(1),[v]=h.split('/');const A=allowed();let name=V[v]&&A.includes(v)?v:A[0];if(S.settings.role==='screen')name='league';if(name!==v&&v&&v!=='home'&&!A.includes(v)&&location.hash){history.replaceState(null,'','#'+name)}
+function render(){curMerge();const h=(location.hash||'#home').slice(1),[v]=h.split('/');const A=allowed();let name=V[v]&&A.includes(v)?v:A[0];if(S.settings.role==='screen')name='league';if(name!==v&&v&&v!=='home'&&!A.includes(v)&&location.hash){history.replaceState(null,'','#'+name)}
  if(name!=='nafs'&&CH&&CH.end<Date.now())CH=null;
  buildNav();$('#main').innerHTML=V[name]();document.title=(MODS.find(m=>m[0]===name)||[])[2]+' — منصة إتقان';$('#sampleBar').hidden=!S.settings.sample;
  if(name==='settings')refreshSnaps();setNav(false)}
@@ -516,11 +563,11 @@ const ACT={undo,add:e=>editRec(e.dataset.k),edit:e=>editRec(e.dataset.k,e.datase
  imgDel:e=>mut(()=>{S.settings[e.dataset.k]=''},'تم الحذف'),backup,restore,xlsxAll,roCopy,
  restoreSnap:async e=>{const s=(await DB.snaps()).find(x=>x.t==+e.dataset.t);if(s&&await confirmDlg('استعادة هذه النسخة التلقائية؟ (يمكنك التراجع)'))mut(()=>{S=Object.assign(blank(),s.data)},'✓ تمت الاستعادة')},
  wipe:async()=>{if(await confirmDlg('حذف <b>كل</b> البيانات من هذا الجهاز؟ يُنصح بتنزيل نسخة احتياطية أولاً.'))mut(()=>{const t=S.settings.theme;S=blank();S.settings.theme=t},'تم حذف كل البيانات')},
- persist:async()=>{if(navigator.storage&&navigator.storage.persist){const ok=await navigator.storage.persist();toast(ok?'✓ التخزين دائم':'لم يمنح المتصفح التخزين الدائم بعد — ثبّت التطبيق لزيادة الفرصة');refreshSnaps()}},install:()=>doInstall()};
+ persist:async()=>{if(navigator.storage&&navigator.storage.persist){const ok=await navigator.storage.persist();toast(ok?'✓ التخزين دائم':'لم يمنح المتصفح التخزين الدائم بعد — ثبّت التطبيق لزيادة الفرصة');refreshSnaps()}},install:()=>doInstall(),subAdd,subRen:e=>subRen(e.dataset.s)};
 document.addEventListener('click',e=>{const b=e.target.closest('[data-act]');if(!b)return;const a=ACT[b.dataset.act];if(!a)return;if(b.tagName==='A'&&b.dataset.act!=='logSent'||b.tagName==='BUTTON'&&b.type!=='submit'&&!b.value)e.preventDefault();if(b.tagName==='BUTTON'&&b.value&&b.closest('dialog'))return;a(b)});
 document.addEventListener('input',e=>{const t=e.target;if(t.dataset.filt!=null){FILT[t.dataset.filt]=t.value;clearTimeout(t._t);t._t=setTimeout(()=>{const p=t.selectionStart;render();const n=$(`[data-filt="${t.dataset.filt}"]`);if(n){n.focus();n.setSelectionRange(p,p)}},250)}
  if(t.dataset.s!=null)setS(t.dataset.s,t.value);if(t.dataset.hj!=null){const l=t.parentElement.querySelector('.hjl');if(l)l.textContent=t.value?hij(t.value):''}});
-document.addEventListener('change',e=>{const t=e.target;if(t.dataset.list){S.settings.lists[t.dataset.list]=[...new Set(t.value.split('\n').map(x=>x.trim()).filter(Boolean))];save();toast('✓ حُفظت القائمة')}
+document.addEventListener('change',e=>{const t=e.target;if(t.dataset.ctx){const c=S.settings.ctx;c[t.dataset.ctx]=t.value;if(t.dataset.ctx==='stage'){c.grade='';c.track=''}if(t.dataset.ctx==='grade')c.track='';save();render();toast('✓ المواد المعروضة: '+ctxLabel());return}if(t.dataset.hide!=null){const h=new Set(S.settings.hidden);t.checked?h.delete(t.dataset.hide):h.add(t.dataset.hide);S.settings.hidden=[...h];save();return}if(t.dataset.list){S.settings.lists[t.dataset.list]=[...new Set(t.value.split('\n').map(x=>x.trim()).filter(Boolean))];save();toast('✓ حُفظت القائمة')}
  if(t.dataset.s!=null){setS(t.dataset.s,t.value);if(t.dataset.s==='school')buildNav()}
  const map={radarCls:v=>VS.radar.cls=v,passSt:v=>VS.pass.st=v,visT:v=>VS.vis.t=v,parCls:v=>{VS.par.cls=v;VS.par.st=''},parSt:v=>VS.par.st=v};if(map[t.id]){map[t.id](t.value);render()}});
 
@@ -530,5 +577,5 @@ async function doInstall(){if(!deferredPrompt){dlg(`<h3>⬇️ تثبيت الت
 $('#installBtn').onclick=doInstall;addEventListener('appinstalled',()=>{$('#installBtn').hidden=true;toast('✓ تم تثبيت التطبيق')});
 function regSW(){if(!('serviceWorker'in navigator))return;navigator.serviceWorker.register('sw.js').then(r=>{const show=w=>{$('#updateBar').hidden=false;$('#updBtn').onclick=()=>w.postMessage('skip')};if(r.waiting&&navigator.serviceWorker.controller)show(r.waiting);r.addEventListener('updatefound',()=>{const w=r.installing;w&&w.addEventListener('statechange',()=>{if(w.state==='installed'&&navigator.serviceWorker.controller)show(w)})})}).catch(()=>{});
  let rl=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(rl)return;rl=true;location.reload()})}
-(async function init(){try{await DB.open();const d=await DB.get('state');if(d){const b=blank();S=Object.assign(b,d);S.settings=Object.assign(b.settings,d.settings);S.settings.lists=Object.assign(b.settings.lists,d.settings.lists||{});S.settings.user=Object.assign(b.settings.user,d.settings.user||{})}}catch(e){toast('تعذّر فتح قاعدة البيانات المحلية: '+e.message)}
+(async function init(){try{await DB.open();const d=await DB.get('state');if(d){const b=blank();S=Object.assign(b,d);S.settings=Object.assign(b.settings,d.settings);S.settings.lists=Object.assign(b.settings.lists,d.settings.lists||{});S.settings.user=Object.assign(b.settings.user,d.settings.user||{})}}catch(e){toast('تعذّر فتح قاعدة البيانات المحلية: '+e.message)}try{curMerge()}catch(e){toast('تعذّر تهيئة قائمة المواد: '+e.message)}
  if(navigator.storage&&navigator.storage.persist)navigator.storage.persisted().then(p=>{if(!p)navigator.storage.persist().catch(()=>{})});applyTheme();net();render();regSW()})();
