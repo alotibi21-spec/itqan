@@ -1,0 +1,555 @@
+@الرياضيات|الثاني الثانوي|ف1 (ط1448) – الجزء الأول|كتاب الرياضيات 2-1
+#الفصل 1: الدوال والمتباينات
+- خصائص الأعداد الحقيقية
+- العلاقات والدوال
+- دوال خاصة
+- تمثيل المتباينات الخطية ومتباينات القيمة المطلقة بيانيًّا
+- حل أنظمة المتباينات الخطية بيانيًّا
+- البرمجة الخطية والحل الأمثل
+#الفصل 2: المصفوفات
+- مقدمة في المصفوفات
+- العمليات على المصفوفات
+- ضرب المصفوفات
+- المحددات وقاعدة كرامر
+- النظير الضربي للمصفوفة وأنظمة المعادلات الخطية
+#الفصل 3: كثيرات الحدود ودوالها
+- الأعداد المركبة
+- القانون العام والمميز
+- العمليات على كثيرات الحدود
+- قسمة كثيرات الحدود
+- دوال كثيرات الحدود
+- حل معادلات كثيرات الحدود
+- نظريتا الباقي والعوامل
+- الجذور والأصفار
+#الفصل 4: العلاقات والدوال العكسية والجذرية
+- العمليات على الدوال
+- العلاقات والدوال العكسية
+- دوال ومتباينات الجذر التربيعي
+- الجذر النوني
+- العمليات على العبارات الجذرية
+- الأسس النسبية
+- حل المعادلات والمتباينات الجذرية
+@الرياضيات|الثاني الثانوي|ف2 (ط1448) – الجزء الثاني|كتاب الرياضيات 2-2
+#الفصل 5
+- ضرب العبارات النسبية وقسمتها
+- جمع العبارات النسبية وطرحها
+- تمثيل دوال المقلوب بيانيًّا
+- تمثيل الدوال النسبية بيانيًّا
+- دوال التغير
+- حل المعادلات والمتباينات النسبية
+#الفصل 6
+- المتتابعات بوصفها دوال
+- المتتابعات والمتسلسلات الحسابية
+- المتتابعات والمتسلسلات الهندسية
+- المتسلسلات الهندسية اللانهائية
+- نظرية ذات الحدين
+- البرهان باستعمال مبدأ الاستقراء الرياضي
+#الفصل 7
+- تمثيل فضاء العينة
+- الاحتمال باستعمال التباديل والتوافيق
+- الاحتمال الهندسي
+- احتمالات الحوادث المستقلة والحوادث غير المستقلة
+- احتمالات الحوادث المتنافية
+#الفصل 8
+- الدوال المثلثية في المثلثات القائمة الزاوية
+- الزوايا وقياساتها
+- الدوال المثلثية للزوايا
+- قانون الجيوب
+- قانون جيوب التمام
+- الدوال الدائرية
+- تمثيل الدوال المثلثية بيانيًّا
+- الدوال المثلثية العكسية
+@الكيمياء|الثاني الثانوي|ف1 (ط1448) – الجزء الأول|كتاب الكيمياء 2-1
+#الفصل 1
+- الضوء وطاقة الكم
+- نظرية الكم والذرة
+- التوزيع الإلكتروني
+#الفصل 2
+- تطور الجدول الدوري الحديث
+- تصنيف العناصر
+- تدرج خواص العناصر
+#الفصل 3
+- تكون الأيون
+- الروابط الأيونية والمركبات الأيونية
+- صيغ المركبات الأيونية وأسماؤها
+- الروابط الفلزية وخواص الفلزات
+#الفصل 4
+- الرابطة التساهمية
+- تسمية الجزيئات
+- التراكيب الجزيئية
+- أشكال الجزيئات
+- الكهروسالبية والقطبية
+#الفصل 5
+- الصيغة الأولية والصيغة الجزيئية
+- صيغ الأملاح المائية
+- المقصود بالحسابات الكيميائية
+- حسابات المعادلات الكيميائية
+- المادة المحددة للتفاعل
+- نسبة المردود المئوية
+#الفصل 6
+- الغازات
+- قوى التجاذب
+- المواد السائلة والمواد الصلبة
+- تغيرات الحالة الفيزيائية
+#الفصل 7
+- قوانين الغازات
+- قانون الغاز المثالي
+- الحسابات المتعلقة بالغازات
+@الكيمياء|الثاني الثانوي|ف2 (ط1448) – الجزء الثاني|كتاب الكيمياء 2-2
+#الفصل 1
+- الطاقة
+- الحرارة
+- المعادلات الكيميائية الحرارية
+- حساب التغير في المحتوى الحراري
+#الفصل 2
+- نظرية التصادم وسرعة التفاعل الكيميائي
+- العوامل المؤثرة في سرعة التفاعل الكيميائي
+- قوانين سرعة التفاعل الكيميائي
+#الفصل 3
+- حالة الاتزان الديناميكي
+- العوامل المؤثرة في الاتزان الكيميائي
+- استعمال ثوابت الاتزان
+#الفصل 4
+- مقدمة إلى الهيدروكربونات
+- الألكانات
+- الألكينات والألكاينات
+- متشكلات الهيدروكربونات
+- الهيدروكربونات الأروماتية
+#الفصل 5
+- هاليدات الألكيل وهاليدات الأريل
+- الكحولات والإيثرات والأمينات
+- مركبات الكربونيل
+- تفاعلات أخرى للمركبات العضوية
+- البوليمرات
+#الفصل 6
+- البروتينات
+- الكربوهيدرات
+- الليبيدات
+- الأحماض النووية
+@الأحياء|الثاني الثانوي|ف1 (ط1448) – الجزء الأول|كتاب الأحياء 2-1
+#الفصل 1: شوكيات الجلد واللافقاريات الحبلية
+- خصائص شوكيات الجلد
+- اللافقاريات الحبلية
+#الفصل 2: الأسماك والبرمائيات
+- الأسماك
+- البرمائيات
+#الفصل 3: الزواحف والطيور
+- الزواحف
+- الطيور
+#الفصل 4: الثدييات
+- خصائص الثدييات
+- تنوع الثدييات
+#الفصل 5: مقدمة في النباتات
+- النباتات اللاوعائية
+- النباتات الوعائية اللابذرية
+- النباتات الوعائية البذرية
+#الفصل 6: تركيب النبات ووظائف أجزائه
+- خلايا النبات وأنسجته
+- هرمونات النباتات واستجاباتها
+#الفصل 7: التكاثر في النباتات الزهرية
+- الأزهار
+- النباتات الزهرية
+#الفصل 8: تركيب الخلية ووظائفها
+- التراكيب الخلوية والعضيات
+- كيمياء الخلية
+#الفصل 9: الطاقة الخلوية
+- كيف تحصل المخلوقات الحية على الطاقة؟
+- البناء الضوئي
+- التنفس الخلوي
+@الأحياء|الثاني الثانوي|ف2 (ط1448) – الجزء الثاني|كتاب الأحياء 2-2
+#الفصل 1: الجهازان الهيكلي والعضلي
+- الجهاز الهيكلي
+- الجهاز العضلي
+#الفصل 2: الجهاز العصبي
+- تركيب الجهاز العصبي
+- تنظيم الجهاز العصبي
+- تأثير العقاقير
+#الفصل 3: أجهزة الدوران والتنفس والإخراج
+- جهاز الدوران
+- الجهاز التنفسي
+- الجهاز الإخراجي
+#الفصل 4: جهازا الهضم والغدد الصم
+- الجهاز الهضمي
+- التغذية
+- جهاز الغدد الصم
+#الفصل 5: التكاثر والنمو في الإنسان
+- جهازا التكاثر في الإنسان
+- مراحل نمو الجنين قبل الولادة
+#الفصل 6: جهاز المناعة
+- جهاز المناعة
+#الفصل 7: التكاثر الخلوي
+- النمو الخلوي
+- الانقسام المتساوي وانقسام السيتوبلازم
+- تنظيم دورة الخلية
+#الفصل 8: التكاثر الجنسي والوراثة
+- الانقسام المنصف
+- الوراثة المندلية
+- ارتباط الجينات وتعدد المجموعات الكروموسومية
+#الفصل 9: الوراثة المعقدة والوراثة البشرية
+- الأنماط الأساسية لوراثة الإنسان
+- الأنماط الوراثية المعقدة
+- الكروموسومات ووراثة الإنسان
+#الفصل 10: الوراثة الجزيئية
+- DNA: المادة الوراثية
+- تضاعف DNA
+- DNA وRNA والبروتين
+- التنظيم الجيني والطفرة
+@الفيزياء|الثاني الثانوي|(ط1448)|كتاب الفيزياء 2
+#الفصل 1
+- حركة الكواكب والجاذبية
+- استخدام قانون الجذب الكوني
+#الفصل 2
+- وصف الحركة الدورانية
+- ديناميكا الحركة الدورانية
+- الاتزان
+#الفصل 3
+- الدفع والزخم
+- حفظ الزخم
+#الفصل 4
+- الطاقة والشغل
+- الآلات
+#الفصل 5
+- الأشكال المتعددة للطاقة
+- حفظ الطاقة
+#الفصل 6
+- درجة الحرارة والطاقة الحرارية
+- تغيرات حالة المادة وقوانين الديناميكا الحرارية
+@الرياضيات|الثالث الثانوي|ف1 (ط1448) – الجزء الأول|كتاب الرياضيات 3-1
+#الفصل 1
+- الدوال
+- تحليل التمثيلات البيانية للدوال والعلاقات
+- الاتصال والنهايات
+- القيم القصوى ومتوسط معدل التغير
+- الدوال الرئيسة (الأم) والتحويلات الهندسية
+- العمليات على الدوال وتركيب دالتين
+- العلاقات والدوال العكسية
+#الفصل 2
+- الدوال الأسية
+- حل المعادلات والمتباينات الأسية
+- اللوغاريتمات والدوال اللوغاريتمية
+- خصائص اللوغاريتمات
+- حل المعادلات والمتباينات اللوغاريتمية
+- اللوغاريتمات العشرية
+#الفصل 3
+- المتطابقات المثلثية
+- إثبات صحة المتطابقات المثلثية
+- المتطابقات المثلثية لمجموع زاويتين والفرق بينهما
+- المتطابقات المثلثية لضعف الزاوية ونصفها
+- حل المعادلات المثلثية
+#الفصل 4
+- القطوع المكافئة
+- القطوع الناقصة والدوائر
+- القطوع الزائدة
+- تحديد أنواع القطوع المخروطية
+@الرياضيات|الثالث الثانوي|ف2 (ط1448) – الجزء الثاني|كتاب الرياضيات 3-2
+#الفصل 5: المتجهات
+- مقدمة في المتجهات
+- المتجهات في المستوى الإحداثي
+- الضرب الداخلي
+- المتجهات في الفضاء الثلاثي الأبعاد
+- الضرب الداخلي والضرب الاتجاهي للمتجهات في الفضاء
+#الفصل 6: الإحداثيات القطبية والأعداد المركبة
+- الإحداثيات القطبية
+- الصورة القطبية والصورة الديكارتية للمعادلات
+- الأعداد المركبة ونظرية ديموافر
+#الفصل 7: الاحتمال والإحصاء
+- الدراسات التجريبية والمسحية والقائمة على الملاحظة
+- التحليل الإحصائي
+- الاحتمال المشروط
+- الاحتمال والتوزيعات الاحتمالية
+- التوزيع الطبيعي
+- التوزيعات ذات الحدين
+#الفصل 8: النهايات والاشتقاق
+- تقدير النهايات بيانيًّا
+- حساب النهايات جبريًّا
+- المماس والسرعة المتجهة
+- المشتقات
+- المساحة تحت المنحنى والتكامل
+- النظرية الأساسية في التفاضل والتكامل
+@الكيمياء|الثالث الثانوي|(ط1448)|كتاب الكيمياء 3
+#الفصل 1
+- أنواع المخاليط
+- تركيز المحلول
+- العوامل المؤثرة في الذوبان
+- الخواص الجامعة للمحاليل
+#الفصل 2
+- مقدمة في الأحماض والقواعد
+- قوة الأحماض والقواعد
+- أيونات الهيدروجين والرقم الهيدروجيني
+- التعادل
+#الفصل 3
+- الأكسدة والاختزال
+- وزن معادلات الأكسدة والاختزال
+#الفصل 4
+- الخلايا الجلفانية
+- البطاريات
+- التحليل الكهربائي
+@الفيزياء|الثالث الثانوي|ف1 (ط1448) – الجزء الأول|كتاب الفيزياء 3-1
+#الفصل 1: حالات المادة
+- خصائص الموائع
+- القوى داخل السوائل
+- الموائع الساكنة والموائع المتحركة
+- المواد الصلبة
+#الفصل 2: الاهتزازات والموجات
+- الحركة الدورية
+- خصائص الموجات
+- سلوك الموجات
+#الفصل 3: الصوت
+- خصائص الصوت والكشف عنه
+- الرنين في الأعمدة الهوائية والأوتار
+#الفصل 4: أساسيات الضوء
+- الاستضاءة
+- الطبيعة الموجية للضوء
+#الفصل 5
+- الانعكاس عن المرايا المستوية
+- المرايا الكروية
+#الفصل 6
+- انكسار الضوء
+- العدسات المحدبة والمقعرة
+#الفصل 7
+- التداخل
+- الحيود
+#الفصل 8
+- الشحنة الكهربائية
+- القوة الكهربائية
+#الفصل 9
+- توليد المجالات الكهربائية وقياسها
+- تطبيقات المجالات الكهربائية
+@الفيزياء|الثالث الثانوي|ف2 (ط1448) – الجزء الثاني|كتاب الفيزياء 3-2
+#الفصل 1: الكهرباء التيارية
+- التيار الكهربائي والدوائر الكهربائية
+- استخدام الطاقة الكهربائية
+#الفصل 2: دوائر التوالي والتوازي الكهربائية
+- الدوائر الكهربائية البسيطة
+- تطبيقات الدوائر الكهربائية
+#الفصل 3: المجالات المغناطيسية
+- المغانط: الدائمة والمؤقتة
+- القوى الناتجة عن المجالات المغناطيسية
+#الفصل 4: الحث الكهرومغناطيسي
+- التيار الكهربائي الناتج عن تغير المجالات المغناطيسية
+- تغير المجالات المغناطيسية يولد قوة دافعة كهربائية حثية
+#الفصل 5: الكهرومغناطيسية
+- تفاعلات المجالات الكهربائية والمغناطيسية والمادة
+- المجالات الكهربائية والمغناطيسية في الفضاء
+#الفصل 6: نظرية الكم
+- النموذج الجسيمي للموجات
+- موجات المادة
+#الفصل 7: الذرة
+- نموذج بور الذري
+- النموذج الكمي للذرة
+#الفصل 8: إلكترونيات الحالة الصلبة
+- التوصيل الكهربائي في المواد الصلبة
+- الأدوات الإلكترونية
+#الفصل 9: الفيزياء النووية
+- النواة
+- الاضمحلال النووي والتفاعلات النووية
+- وحدات بناء المادة
+@علوم الأرض والفضاء|الثالث الثانوي|(ط1448)|كتاب علوم الأرض والفضاء
+#الفصل 1
+- نشأة الكون
+- النجوم والمجرات
+#الفصل 2
+- قانون الجاذبية وقوانين كبلر
+- التقنية الفضائية
+#الفصل 3
+- ما المعدن؟
+- أنواع المعادن وأهميتها
+#الفصل 4
+- ما الصخور النارية؟
+- تصنيف الصخور النارية
+- تشكل الصخور الرسوبية
+- أنواع الصخور الرسوبية
+- الصخور المتحولة
+#الفصل 5
+- انجراف القارات
+- توسع قاع المحيط
+- حدود الصفائح وأسباب حركتها
+#الفصل 6
+- ما البركان؟
+- الثورانات البركانية
+- الأمواج الزلزالية وبنية الأرض
+- قياس الزلازل وتحديد أماكنها
+- الزلازل والمجتمع
+@اللغة الإنجليزية|الثاني الثانوي|ف1 (ط1448) – Part 1 (Scope and Sequence)|Mega Goal 2
+#Unit 1: Connected by Technology
+- Functions: Ask for clarification and confirm; discuss using technology for communication; talk about personality characteristics
+- Grammar: Auxiliary verbs (do, have, be); the comparative and superlative; needs to be done / have-get something done; past participles as adjectives
+#Unit 2: Crime Doesn't Pay
+- Functions: Discuss crime and punishment; read and discuss newspaper articles; explain steps in a process
+- Grammar: The passive; past perfect and past perfect progressive; used to and would; past progressive
+#Unit 3: Far and Away
+- Functions: Talk about travel experiences and dreams; discuss hotels and services; make and decline special requests
+- Grammar: Adverbs of degree; sentence adverbs; future with be going to and will
+#Unit 4: TV Around the World
+- Functions: Discuss types of TV programs; express and explain preferences; express certainty; talk about festivals
+- Grammar: Direct and indirect objects (to/for); articles; adjective clauses and relative pronouns
+#Unit 5: Working 9 to 5
+- Functions: Talk about jobs; ask for favors, make requests and ask for information; express obligation, necessity and lack of necessity
+- Grammar: Subjunctive; I'd like you / I want you + infinitive; tag questions
+#Unit 6: Going Green
+- Functions: Evaluate how green you are; discuss ways to be environmentally responsible; make suggestions; express preferences with I'd rather
+- Grammar: Gerunds and infinitives after verbs; simple present vs present progressive; conditional sentences with present and future forms
+@اللغة الإنجليزية|الثاني الثانوي|ف2 (ط1448) – Part 2 (Scope and Sequence)|Mega Goal 2
+#Unit 7: There's No Place Like Home
+- Functions: Talk about your home; describe things you are looking for; directions for places; requests, offers, promises, warnings; making decisions
+- Grammar: Adjective order; too and enough
+#Unit 8: The Sporting Life
+- Functions: Talk about the Olympics, sports and athletes; encourage and express confidence; explain steps in a process or game
+- Grammar: Gerunds as subjects; superlative + present perfect; present perfect progressive vs present perfect simple; adverbs of manner; comparative structures
+#Unit 9: Laugh Out Loud
+- Functions: Talk about humor; explain consequences with comparatives; tell and respond to jokes; express wishes, regret and criticism
+- Grammar: Participial adjectives; get + adjective / past participle; the…the… comparatives; such…that / so…that; can't, could, must, may, might
+#Unit 10: You Are What You Eat
+- Functions: Talk about food myths; discuss eating habits; offer, accept and decline food and drink
+- Grammar: Phrasal verbs (separable, nonseparable, three-word); count/noncount nouns; expressions of quantity; sequence words
+#Unit 11: Amazing Animals
+- Functions: Talk about animals and their behavior; ask for and give advice
+- Grammar: Passive modals; the passive with reporting verbs; all/both/neither/none; both…and / neither…nor / either…or
+#Unit 12: What Would You Do?
+- Functions: Talk about ethics and morals; discuss ethical dilemmas; give opinions
+- Grammar: Present vs past hypothetical conditionals; implied conditionals; as if / as though; future progressive and future perfect; used to vs be used to; was/were going to
+@اللغة الإنجليزية|الثالث الثانوي|ف1 (ط1448) – Part 1 (Scope and Sequence)|Mega Goal 3
+#Unit 1: Two Is Better Than One
+- Functions: Discuss how people/animals help each other; negotiate; express enthusiasm; words connected with museums and galleries
+- Grammar: Other, others, another; emphatic do; simple present vs present progressive; gradable and non-gradable adjectives
+#Unit 2: Influential People
+- Functions: Talk about fame and fortune; discuss options; ask and tell about personal experiences
+- Grammar: Used to vs be used to; would for repeated past action; was/were going to; present perfect; past simple vs present perfect
+#Unit 3: What Will They Think of Next?
+- Functions: Discuss technology of the last hundred years; make predictions about life in 2100; persuade; space and the planetary system vocabulary
+- Grammar: Future perfect and future perfect progressive; the future with dependent time clauses
+#Unit 4: The World of TV
+- Functions: Talk about TV films and documentaries; identify genres; agree and disagree with opinions
+- Grammar: Both…and, not only…but also, either…or, neither…nor; independent clauses with and, but, or, so, yet; comparatives and superlatives; I'd rather / I'd prefer
+#Unit 5: Do You Really Need It?
+- Functions: Evaluate the influence of advertising; create an advertisement; advise someone against something; express preference; shopping vocabulary
+- Grammar: Adverb clauses (because, since, now that); (in order) to and so (that); conditionals with when, if, even if, in case, only if, unless; where, wherever, everywhere
+#Unit 6: The Gender Divide
+- Functions: Talk about gender differences and similarities; discuss stereotypes; ask for and give directions; hobbies vocabulary
+- Grammar: Verbs + infinitives or gerunds with different meanings; passive infinitives and gerunds; auxiliary verbs after but and and; present perfect progressive vs simple; adjective + preposition + gerund
+@اللغة الإنجليزية|الثالث الثانوي|ف2 (ط1448) – Part 2 (Scope and Sequence)|Mega Goal 3
+#Unit 7: Everyone Makes Mistakes
+- Functions: Talk about famous mistakes in history; discuss personal mistakes; apologize and respond to an apology; business vocabulary
+- Grammar: Modals and passive modals in the past; count and noncount nouns; expressions of quantity
+#Unit 8: Against the Odds
+- Functions: Discuss remarkable events and coincidences; express surprise
+- Grammar: Such…that / so…that; reducing adverb clauses; was/were about to; past perfect and past perfect progressive
+#Unit 9: Beauty Is Only Skin Deep
+- Functions: Discuss beauty products and practices through history; make and respond to a complaint
+- Grammar: Noun clauses (with that, after verbs, after adjectives, as subjects); needs to be done; get/have done; present and past participles
+#Unit 10: They Said, We Said
+- Functions: Discuss gossip and rumors; tell a secret; promise to keep a secret; body vocabulary
+- Grammar: Reported vs quoted speech; sequence of tenses; noun clauses with whether/if; modal auxiliaries for present and future
+#Unit 11: Express Yourself
+- Functions: Discuss world languages; talk about the English language; ask someone to repeat something; vacation vocabulary
+- Grammar: Adjective clauses and relative pronouns; future with will and be going to; present conditionals; wish / if only
+#Unit 12: Lost and Found
+- Functions: Conduct an interview; express regret; express understanding; historical monuments vocabulary
+- Grammar: Where, when and whose in adjective clauses; past conditionals; as if / as though; inversions
+@التوحيد|الثاني الثانوي|(ط1448)|كتاب التوحيد
+#الوحدة 1: العقيدة الإسلامية
+- معنى العقيدة الإسلامية وأركانها وأهميتها
+- مصادر تلقي العقيدة الإسلامية
+- منهج أهل السنة والجماعة في تلقي العقيدة
+#الوحدة 2: توحيد الربوبية
+- تعريف التوحيد وأقسامه
+- توحيد الربوبية
+- من أدلة وجود الله تعالى
+#الوحدة 3: توحيد الألوهية والعبادة
+- توحيد الألوهية
+- أهمية توحيد الألوهية
+- الأدلة على إثبات توحيد الألوهية
+- شروط (لا إله إلا الله)
+- تعريف العبادة ومنزلتها وشموليتها
+- من أنواع العبادة (1)
+- من أنواع العبادة (2)
+- من أنواع العبادة (3)
+#الوحدة 4: توحيد الأسماء والصفات
+- معتقد أهل السنة والجماعة في أسماء الله تعالى وصفاته
+#الوحدة 5: عقائد وأقوال وأفعال تنافي التوحيد
+- الكفر وأقسامه
+- الشرك وأقسامه
+- النفاق
+- دعاء غير الله تعالى
+- السحر
+- الاستهزاء بالدين
+#الوحدة 6: حقوق النبي ﷺ
+- معنى شهادة أن محمدًا رسول الله ولوازمها
+- معنى محبة النبي ﷺ
+#الوحدة 7: نعمة التوحيد والوحدة
+- البيعة الشرعية
+- التحذير من التفرق والتحزب
+- خطر الأحزاب والجماعات الضالة والوقاية منها
+- الحكم بما أنزل الله
+@الفقه|الثالث الثانوي|(ط1448)|كتاب الفقه
+#الوحدة الأولى: مقدمة في الفقه
+- تعريف الفقه ونشأته ومدارسه
+- أسباب خلاف العلماء
+- الفتوى والاستفتاء
+#الوحدة الثانية: فقه الأسرة (1)
+- فقه الأسرة
+- الخطبة
+- أركان الزواج وشروطه
+- المحرمات من النساء
+- الشروط في الزواج
+- صور محرمة في الزواج
+- المهر (الصداق)
+- وليمة العرس
+- تحديد النسل وتنظيمه
+#الوحدة الثالثة: فقه الأسرة (2)
+- الطلاق
+- الخلع
+- العدة
+- النفقات
+- الحضانة
+- الرضاع
+#الوحدة الرابعة: البيع
+- البيع
+- أقسام البيع
+- شروط البيع
+- وقت البيع ومكانه
+- قبض المبيع
+- البيع بشرط البراءة
+#الوحدة الخامسة: المعاملات المحرمة
+- الربا (1)
+- الربا (2)
+- البيوع المحرمة (1)
+- البيوع المحرمة (2)
+- البيوع المحرمة (3)
+#الوحدة السادسة: المسابقات واللقطة
+- المسابقات
+- اللقطة
+#الوحدة السابعة: الجنايات
+- الجنايات
+- القتل العمد
+- القتل شبه العمد
+- القتل الخطأ
+- الجناية على ما دون النفس
+@الدراسات الأدبية|الثالث الثانوي|(ط1448)|كتاب الدراسات الأدبية
+#الوحدة الأولى: الأدب القديم – الأدب في العصر الجاهلي
+- مفهوم العصر الجاهلي
+- بيئة العرب في العصر الجاهلي
+- الشعر الجاهلي
+- نماذج من الشعر الجاهلي
+- النثر الجاهلي
+#الوحدة الأولى: الأدب القديم – الأدب في صدر الإسلام وعصر بني أمية
+- أثر الإسلام في العرب
+- النثر في صدر الإسلام ونماذج منه
+- الشعر في صدر الإسلام ونماذج منه
+- الأدب في العصر الأموي: الملامح العامة للعصر
+- الشعر في عصر بني أمية
+- بيئات الشعر الأموي
+#الوحدة الأولى: الأدب القديم – الأدب في العصر العباسي
+- متغيرات العصر العباسي وأثرها في الأدب
+- نماذج من الشعر العباسي
+- النثر العباسي
+#الوحدة الثانية: الأدب الحديث – الأدب العربي
+- عوامل نهضة الأدب العربي في العصر الحديث
+- فنون الشعر العربي الحديث
+- واقع الشعر العربي الحديث من خلال مدارسه الأدبية وأبرز اتجاهاته
+- نبذة مختصرة عن فنون النثر العربي الحديث
+#الوحدة الثانية: الأدب الحديث – الأدب الحديث في المملكة العربية السعودية
+- مراحل الأدب السعودي
+- الشعر السعودي: أغراضه وموضوعاته الحديثة
+- الاتجاهات الفنية في الشعر السعودي
+- النثر السعودي
