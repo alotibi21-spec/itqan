@@ -58,7 +58,7 @@ const C={
 };
 function opts(f){if(f.opts)return f.opts;if(f.ls==='subjects')return subjOpts();if(f.ls==='grades')return gradeOpts();if(f.ls==='units')return unitOpts();if(f.ls)return S.settings.lists[f.ls]||[];if(f.ref==='skills')return skillOpts();if(f.ref)return[...new Set(S[f.ref].map(x=>x.name))];return[]}
 function fmt(f,v){if(v==null||v==='')return'<span class="muted">—</span>';if(f.t==='date')return esc(hij(v));if(f.t==='num')return AR(v,1);if(f.t==='ta')return esc(String(v).slice(0,90))+(String(v).length>90?'…':'');return esc(v)}
-function ensureRefs(o,fs){for(const f of fs){const v=o[f.k];if(v==null||v==='')continue;if(f.ls){const L=S.settings.lists[f.ls];if(!L.includes(v))L.push(v)}
+function ensureRefs(o,fs){for(const f of fs){const v=o[f.k];if(v==null||v==='')continue;if(f.ls==='units'){const st=S.settings;st.units=st.units||{};const k=unitKey(o.subject||'',o.grade||'');const L=st.units[k]=st.units[k]||[];if(!L.includes(v))L.push(v)}else if(f.ls){const L=S.settings.lists[f.ls]=S.settings.lists[f.ls]||[];if(!L.includes(v))L.push(v)}
   if(f.ref==='students'&&!S.students.some(s=>s.name===v))S.students.push({id:uid(),name:v,cls:o.cls||''});
   if(f.ref==='skills'&&!S.skills.some(s=>s.name===v))S.skills.push({id:uid(),name:v,subject:o.subject||''})}}
 function clean(key,o){const out={};for(const f of C[key].f){let v=o[f.k];if(f.t==='num'){v=toNum(v);if(v!=null){if(f.min!=null)v=Math.max(f.min,v);if(f.max!=null)v=Math.min(f.max,v)}}else if(f.t==='date')v=v?parseDate(v)||v:'';else if(f.t==='tel')v=normMob(v);else v=String(v??'').trim();out[f.k]=v}return out}
