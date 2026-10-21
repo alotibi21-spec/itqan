@@ -1,0 +1,47 @@
+<!doctype html>
+<!-- منصة إتقان لتحسين نواتج التعلم — © 1448هـ / 2026م عبدالله خالد العتيبي. جميع الحقوق محفوظة — All Rights Reserved. يُمنع النسخ أو إعادة النشر دون إذن. انظر LICENSE. -->
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>منصة إتقان لتحسين نواتج التعلم</title>
+<meta name="description" content="منصة إتقان لتحسين نواتج التعلم: رادار الفاقد، الطلاب على الحافة، نافس الذكي، دوري الفصول، جواز المهارات وغيرها — تعمل دون اتصال والبيانات على الجهاز فقط">
+<meta name="theme-color" content="#0b1f3a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="إتقان">
+<meta name="format-detection" content="telephone=no">
+<link rel="preload" href="fonts/Tajawal-400.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">تخطَّ إلى المحتوى</a>
+<div id="updateBar" class="banner gold" hidden>يتوفر إصدار جديد. <button id="updBtn" class="btn sm">تحديث الآن</button></div>
+<div id="sampleBar" class="banner warn" hidden>⚠️ تُعرض الآن <b>بيانات تجريبية وهمية</b> للتوضيح فقط. <button class="btn sm" data-act="clearSample">حذف البيانات التجريبية</button></div>
+<header class="top">
+  <button class="iconbtn menu" id="menuBtn" aria-label="القائمة" aria-expanded="false">☰</button>
+  <a class="brand" href="#home"><img src="icon.svg" alt="" width="34" height="34"><span class="ttl"><b>إتقان</b><small id="subTtl">منصة تحسين نواتج التعلم</small></span></a>
+  <span class="grow"></span>
+  <span id="roleInd" class="pill"></span>
+  <span id="netInd" class="net"></span>
+  <button class="iconbtn" id="installBtn" hidden aria-label="تثبيت التطبيق" title="تثبيت التطبيق">⬇️</button>
+  <button class="iconbtn" id="themeBtn" aria-label="الوضع الليلي">🌙</button>
+</header>
+<div class="layout">
+<nav id="nav" class="side" aria-label="الأقسام"></nav>
+<main id="main" tabindex="-1"></main>
+</div>
+<footer class="copyline">© ١٤٤٨هـ عبدالله خالد العتيبي – جميع الحقوق محفوظة، يُمنع النسخ أو إعادة النشر دون إذن</footer>
+<div class="print-credit">فكرة وتصميم: عضو الفريق التنفيذي بمحافظة الدوادمي - قطاع السر - عبدالله خالد العتيبي · للتواصل: 0504153442<br>© ١٤٤٨هـ عبدالله خالد العتيبي – جميع الحقوق محفوظة، يُمنع النسخ أو إعادة النشر دون إذن</div>
+<dialog id="dlg"><form method="dialog" id="dlgForm"></form></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="vendor/xlsx.full.min.js" defer></script>
+<script src="vendor/qrcode.min.js" defer></script>
+<script src="arnum.js" defer></script>
+<script src="app.js" defer></script>
+</body>
+</html>
