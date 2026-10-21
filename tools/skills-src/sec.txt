@@ -382,3 +382,117 @@
 - كتابة القصة
 #القسم الثاني – كفاية التواصل الشفهي
 - مكونات الذكاء التواصلي ومهاراته
+@اللغة الإنجليزية|الأول الثانوي (السنة الأولى المشتركة)|ف2 (ط1448) – Part 2 (Scope and Sequence)|كتاب Mega Goal 1
+#Unit 7: You've Got Mail!
+- Functions: Discuss email and letter format and etiquette; Make and accept an apology; Wish someone success; Make arrangements; Accept and refuse invitations
+- Grammar: Preposition + gerund; Although, even though, in spite of; As soon as, when, So...(that); Used to and would; There is/are; Plurals; Definite article: the
+#Unit 8: Wishful Thinking
+- Functions: Make wishes; Talk about imaginary situations; Talk about probability and improbability; Talk about predicaments; Give advice to solve problems; Words connected with money, shopping habits and prices
+- Grammar: Conditional sentences with if-clause: imaginary situations; Conditional sentences with might and could; Verb: Wish; Count/noncount nouns; Expressions of quantity: some, any, no
+#Unit 9: Complaints, Complaints
+- Functions: Talk about problems and things that need to be done; Ask to have something done; Talk about common consumer complaints
+- Grammar: Needs to be (done); Have/get something (done); Past participles as adjectives; Present perfect simple tense: already, yet, just; Verb + gerund; verb + infinitive; Subject and object pronouns; Imperatives and two-word verbs
+#Unit 10: I Wonder What Happened
+- Functions: Talk about events that happened in the past before others; Speculate about facts and events; Expressing enthusiasm with intensifiers and adjectives; Express necessity and lack of necessity
+- Grammar: Past perfect tense; Can't, could, couldn't, must, may, or might; Independent clauses with: and, but, so and yet; The past with dependent time clauses; Conditional sentences with present and future forms
+#Unit 11: If It Hadn't Happened
+- Functions: Talk about discoveries and inventions and how things would have been different without them; Talk about missed opportunities and regrets; Expressing ability, permission and requests
+- Grammar: Should have + past participle; Conditional sentences: hypothetical situations in the past; If with could and might; Present perfect versus simple past; Time expressions with: ago, for, since; If + past perfect + be able to
+#Unit 12: What They Said
+- Functions: Report what people said; Discuss famous quotes; Relate messages; Discussing the environment and natural disasters; Expressing agreement and disagreement with: so, neither, either, too
+- Grammar: Reported speech; Reported questions; Word changes in reported speech; Reporting verbs; Negative questions; Relative adverb: Where
+@التقنية الرقمية|الأول الثانوي (السنة الأولى المشتركة)|ف2 (ط1448) – الجزء الثاني من الكتاب|كتاب التقنية الرقمية
+#الوحدة الأولى: معالجة الصور المتقدمة
+- أساسيات تحرير الصور
+- الطبقات
+- تحرير الصور
+- تنقيح الصور
+- إنشاء رسومات ثنائية الأبعاد
+#الوحدة الثانية: مستندات ونماذج وتقارير الأعمال
+- الكتابة في مستندات الأعمال
+- مبادئ تصميم مستندات الأعمال
+- نماذج الأعمال 1
+- نماذج الأعمال 2
+- تقارير الأعمال
+#الوحدة الثالثة: الشبكات
+- الشبكات السلكية واللاسلكية
+- شبكات النقال وشبكات الأقمار الصناعية
+- بروتوكول الإنترنت وأداة محاكاة الشبكة
+- إنشاء اتصال إنترنت عبر الكابل
+#الوحدة الرابعة: البرمجة بواسطة المايكروبت
+- مقدمة إلى المايكروبت
+- المتغيرات والتكرارات
+- اتخاذ القرارات
+- قسم الذكاء الاصطناعي
+@التربية الصحية والبدنية|الأول الثانوي (السنة الأولى المشتركة)|ف1 (ط1447) – الجزء الأول|دليل التربية الصحية والبدنية (1)
+#الجزء الأول – الوحدة الأولى: اللياقة البدنية والصحة
+- أهمية اللياقة القلبية التنفسية
+- الحد الأدنى من النشاط البدني للمحافظة على الصحة
+- مكونات النشاط البدني المرتبط بالصحة
+- روح المبادرة الإيجابية في أثناء ممارسة النشاط البدني
+#الجزء الأول – الوحدة الثانية: كرة القدم
+- خطة دفاعية (تغطية الزميل) في كرة القدم
+- الهجوم الخاطف (الهجمة المرتدة) في كرة القدم
+- قاعدة التسلل من مواد قانون كرة القدم أثناء الممارسة
+- ممارسة بعض مهام التحكيم أثناء المنافسات
+- قيمة الأداء بروح الفريق الواحد في أثناء ممارسة النشاط البدني
+#الجزء الأول – الوحدة الثالثة: النشاط البدني والصحة
+- فوائد الانتظام على ممارسة النشاط البدني وأهميته للصحة
+- عناصر الغذاء
+- نسب الغذاء الموصى بها
+#الجزء الأول – الوحدة الرابعة: كرة الطاولة
+- الإرسال القصير بظهر المضرب
+- الضربة القاطعة بظهر المضرب
+- الضربة الأمامية بوجه المضرب
+- تطبيق مواد قانون كرة الطاولة أثناء الممارسة
+- أهمية استثمار الوقت الحر بما ينفع
+#الجزء الأول – الوحدة الخامسة: إصابات النشاط البدني
+- طرق الوقاية من إصابات النشاط الرياضي
+- محتويات حقيبة الإسعافات الأولية
+- المبادئ الأساسية للإسعافات الأولية (الإصابات الحرارية)
+#الجزء الأول – الوحدة السادسة: كرة السلة
+- طريقة دفاع المنطقة (2:3) في كرة السلة
+- طريقة الهجوم المنظم في كرة السلة
+- تطبيق مواد قانون كرة السلة في أثناء الممارسة
+#الجزء الأول – الوحدة السابعة: اللياقة البدنية المرتبطة بالأداء
+- أهمية السرعة للأداء الرياضي
+- أهمية التوازن للأداء الرياضي
+- أهمية الرشاقة للأداء الرياضي
+#الجزء الأول – الوحدة الثامنة: النشاط البدني والصحة
+- إعداد برنامج ميسر للنشاط البدني بما يلائم تركيب جسمه
+- نوع وكمية الغذاء المدعم للنشاط البدني والرياضي
+- تعديل السلوك لزيادة النشاط البدني من خلال الأنشطة الحياتية
+@التربية الصحية والبدنية|الأول الثانوي (السنة الأولى المشتركة)|ف2 (ط1447) – الجزء الثاني|دليل التربية الصحية والبدنية (1)
+#الجزء الثاني – الوحدة الأولى: النشاط البدني والصحة
+- الأنشطة البدنية التي تسهم في الوقاية من أمراض العصر
+- قياس مستوى النشاط البدني اليومي بالطرائق الميسرة
+#الجزء الثاني – الوحدة الثانية: كرة اليد
+- تطبيق خطة دفاع المنطقة (6:0) في كرة اليد
+- تطبيق الخطة الهجومية (3:3) في كرة اليد
+- تطبيق مواد قانون كرة اليد في أثناء ممارسة نشاط لكرة اليد
+- روح المبادرة الإيجابية في أثناء ممارسة نشاط لكرة اليد
+#الجزء الثاني – الوحدة الثالثة: النشاط البدني والصحة
+- النتائج السلبية المترتبة عن التدخين والخمول البدني
+- أهمية السوائل (قبل/ في أثناء/ بعد) المجهود البدني
+- مضار المنشطات الطبيعية والصناعية في أثناء ممارسة الرياضة
+#الجزء الثاني – الوحدة الرابعة: الريشة الطائرة
+- الإرسال المرتفع من أسفل بوجه المضرب
+- الضربة الساقطة بوجه المضرب
+- الضربة الساحقة بوجه المضرب
+- تطبيق مواد قانون الريشة الطائرة في أثناء الممارسة
+#الجزء الثاني – الوحدة الخامسة: إصابات النشاط الرياضي
+- المبادئ الأساسية للإسعافات الأولية في حالة الألم الجانبي الحاد
+- التنفس الاصطناعي بطريقة صحيحة
+- أبرز طرق نقل المصاب
+#الجزء الثاني – الوحدة السادسة: الكرة الطائرة
+- الضربة الساحقة الخاطفة في الكرة الطائرة
+- حائط الصد الفردي في الكرة الطائرة
+- تطبيق مواد قانون الكرة الطائرة في أثناء ممارسة الكرة الطائرة
+#الجزء الثاني – الوحدة السابعة: التنس
+- الإرسال المستقيم من الأعلى في التنس
+- الضربة الطائرة الخلفية في التنس
+- الضربة نصف الطائرة بظهر المضرب في التنس
+- الضربة الأمامية المستقيمة بوجه المضرب في التنس
+- تطبيق مواد قانون التنس في أثناء الممارسة
+#الجزء الثاني – الوحدة الثامنة: النشاط البدني والصحة
+- قياس عناصر اللياقة البدنية المرتبطة بالصحة: اللياقة القلبية التنفسية، اللياقة العضلية الهيكلية (القوة العضلية، قوة عضلات البطن، المرونة)، التركيب الجسمي

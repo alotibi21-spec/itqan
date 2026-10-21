@@ -10,15 +10,19 @@ for f in ['ar.txt','math.txt','sci.txt','en.txt','isl.txt','soc.txt','dig.txt','
     elif ln.startswith('- '):out[-1][5].append(ln[2:].strip())
 import re
 def nz(x):return re.sub(r'[\u064B-\u0652\u0640\s]','',x)
-seen={};skipped=[]
-for r in out:
-  if not r[2].startswith('ف2 (ط1446)'):seen.setdefault((r[0],r[1]),set()).update(nz(x) for x in r[5])
-for r in out:
-  if r[2].startswith('ف2 (ط1446)'):
-    S=seen.setdefault((r[0],r[1]),set());keep=[]
+skipped=[]
+def yr(sem):
+  m=re.search(r'ط(\d{4})',sem);return int(m.group(1)) if m else 0
+bykey={}
+for r in out:bykey.setdefault((r[0],r[1]),[]).append(r)
+for k,L in bykey.items():
+  if k[0]=='الرياضيات':continue  # أسماء دروس الرياضيات تتكرر بمحتوى مختلف (نطاق أعداد آخر)
+  for r in L:
+    newer=set(nz(x) for q in L if yr(q[2])>yr(r[2]) for x in q[5])
+    keep=[]
     for x in r[5]:
-      if nz(x) in S:skipped.append((r[0],r[1],x))
-      else:keep.append(x);S.add(nz(x))
+      if nz(x) in newer:skipped.append((r[0],r[1],r[2],x))
+      else:keep.append(x)
     r[5]=keep
 out=[r for r in out if r[5]]
 open('/tmp/skipped.txt','w').write('\n'.join('|'.join(x) for x in skipped))
