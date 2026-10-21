@@ -12,7 +12,11 @@ function skMerge(force){const st=S.settings;if(!force&&(st.skV||0)>=SKV)return;s
  /* ربط مهارات نافس المضافة في 1.1.0 (بلا معرّف) بمعرّفها */
  S.skills.forEach(s=>{if(!s.sid&&s.src===NAFS_TAG){s.sid=sidOf(s.subject,s.grade,NAFS_UNIT,s.name);if(!s.unit)s.unit=NAFS_UNIT}});
  const have=new Set(S.skills.map(s=>s.sid).filter(Boolean)),dead=new Set(st.skDel.map(t=>t.sid));
- seeds().forEach(x=>{if(!have.has(x.sid)&&!dead.has(x.sid))S.skills.push({id:uid(),...x,hide:''})});st.skV=SKV}
+ seeds().forEach(x=>{if(!have.has(x.sid)&&!dead.has(x.sid))S.skills.push({id:uid(),...x,hide:''})});
+ /* 1.6.0: إزالة المهارات الأصلية المتقاعدة (المكررة بين الطبعات) إن لم تُعدَّل ولم تُسجَّل لها نتائج */
+ if((st.skV||0)<6){const cur=new Set(seeds().map(x=>x.sid)),used=new Set([...(S.results||[]).map(r=>r.skill),...(S.attempts||[]).map(a=>a.skill)].filter(Boolean));
+  S.skills=S.skills.filter(s=>!(s.sid&&!cur.has(s.sid)&&s.src!==NAFS_TAG&&s.sid===sidOf(s.subject,s.grade,s.unit,s.name)&&!used.has(s.name)))}
+ st.skV=SKV}
 function unitKey(sub,g){return sub+'||'+g}
 function unitsOf(sub,g){const st=S.settings;const L=[];const add=u=>{if(u&&!L.includes(u))L.push(u)};
  skSorted(S.skills.filter(s=>s.subject===sub&&(s.grade||'')===(g||''))).forEach(s=>add(s.unit));((st.units||{})[unitKey(sub,g)]||[]).forEach(add);return L}
