@@ -1,0 +1,3 @@
+const {chromium}=require('playwright');(async()=>{const b=await chromium.launch({channel:'chrome'});const p=await b.newPage();const e=[];p.on('pageerror',x=>e.push(x.message));await p.goto('http://localhost:8799/#settings');await p.waitForTimeout(1200);
+await p.selectOption('[data-ctx=stage]','الثانوية (نظام المسارات)');await p.waitForTimeout(200);await p.selectOption('[data-ctx=grade]','الأول الثانوي (السنة الأولى المشتركة)');await p.waitForTimeout(200);
+await p.goto('http://localhost:8799/#skills');await p.waitForTimeout(600);console.log(await p.evaluate(()=>[...document.querySelectorAll('.skcard h3')].map(h=>h.textContent.trim().slice(0,30))),'ERR',e);await b.close()})();
