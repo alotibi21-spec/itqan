@@ -1,6 +1,6 @@
 /*! منصة إتقان لتحسين نواتج التعلم — © 1448هـ / 2026م عبدالله خالد العتيبي. جميع الحقوق محفوظة — All Rights Reserved. يُمنع النسخ أو التعديل أو إعادة النشر دون إذن كتابي. انظر LICENSE. */
 'use strict';
-const VER='1.6.0';
+const VER='1.6.1';
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const AR=(n,d=0)=>n==null||isNaN(n)?'—':Number(n).toLocaleString('ar-SA',{maximumFractionDigits:d});
