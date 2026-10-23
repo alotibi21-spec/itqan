@@ -139,3 +139,5 @@ body:not([data-theme=dark]),html:not([data-theme=dark]) body{background:linear-g
 @media print{.btn::after,.top::after{display:none}body{background:#fff!important}}
 .credit .cr-t,.credit .cr-r,.credit .cr-n,.print-credit .cr-t,.print-credit .cr-r,.print-credit .cr-n{display:block}
 .credit .cr-t{font-size:.95em;opacity:.9}.credit .cr-r{font-size:.88em}.credit .cr-n{white-space:nowrap;font-size:1.15em;letter-spacing:.2px}.credit a{margin-top:4px}
+.credit{font-size:13px;line-height:1.7}.credit .cr-t{font-size:12px}.credit .cr-r{font-size:12px}.credit .cr-n{font-size:14px}.credit a{font-size:13px}
+@media(min-width:900px){.credit{font-size:14px}.credit .cr-n{font-size:15px}}
