@@ -57,8 +57,8 @@ function vidSave(e){const g=k=>($('#vf_'+k).value||'').trim();const o={title:g('
 
 /* v1.10.1 external sources (data-driven; links only, no copied questions) */
 const EXT_SRC=[
- {t:'قسم نافس – منصة رفعة التعليمية',u:'https://refaheducation.com/ar/national',src:'منصة رفعة التعليمية'},
- {t:'ملفات نافس (تجميعات ونماذج)',u:'https://www.refaheducation.com/ar/national/files/14/4',src:'منصة رفعة التعليمية'}
+ {t:'منصة رفعة للتخطيط والتقويم والمتابعة والإثراء (الدخول والتسجيل)',u:'https://ithraa-rifah.com/',src:'منصة رفعة التعليمية'},
+ {t:'فيديو تعريفي بمنصة رفعة',u:'https://youtu.be/41JptvCsDZ4',src:'منصة رفعة التعليمية'}
 ];
 function extSources(){return`<div class="card ext-src"><h3>🔗 مصادر خارجية</h3><p class="small muted">⚠️ مواد تدريبية خارجية وليست أسئلة رسمية صادرة عن هيئة تقويم التعليم والتدريب (ETEC). تُفتح في نافذة جديدة.</p><div class="ext-grid">${EXT_SRC.map(x=>`<a class="ext-card" href="${esc(x.u)}" target="_blank" rel="noopener noreferrer"><b>${esc(x.t)} ↗</b><span class="small muted">المصدر: ${esc(x.src)} – محتوى غير رسمي، الحقوق لمُعدّيه</span></a>`).join('')}</div></div>`}
 const SQL='أسئلة المدرسة (غير رسمية)';
