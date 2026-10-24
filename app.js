@@ -1,6 +1,6 @@
 /*! منصة إتقان لتحسين نواتج التعلم — © 1448هـ / 2026م عبدالله خالد العتيبي. جميع الحقوق محفوظة — All Rights Reserved. يُمنع النسخ أو التعديل أو إعادة النشر دون إذن كتابي. انظر LICENSE. */
 'use strict';
-const VER='1.10.3';
+const VER='1.11.0';
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const AR=(n,d=0)=>n==null||isNaN(n)?'—':Number(n).toLocaleString('ar-SA',{maximumFractionDigits:d});
@@ -308,6 +308,7 @@ V.home=()=>{const st=S.settings,ov=overall(),e=edgeList(),lg=leaguePts(wkStart(t
  return`<div class="hero"><h2>منصة إتقان لتحسين نواتج التعلم</h2><p>${st.school?esc(st.school)+' · ':''}${esc(HF.format(new Date()))}${st.user.name?' · مرحباً '+esc(st.user.name):''}</p><p class="gold small">قياس دقيق · تدخل مبكر · تحفيز مستمر — والبيانات على جهازك فقط 🔒</p></div>
  ${!st.started?startCard():''}
  <div class="card"><h3>⚡ إدخال سريع</h3><div class="quick">${Q.map(q=>`<button data-act="quick" data-q="${q[0]}"><span class="e">${q[1]}</span>${q[2]}</button>`).join('')}<button data-act="quickVoice"><span class="e">🎤</span>إدخال صوتي سريع</button></div></div>
+ ${typeof expCard==='function'&&A.includes('settings')?expCard():''}
  <div class="grid g4">${ks.filter(k=>A.includes(k[0])).map(k=>`<a class="kpi" href="#${k[0]}"><b>${k[1]}</b><span>${k[2]}</span></a>`).join('')}</div>
  <div class="grid g2" style="margin-top:14px"><div class="card"><h3>📉 أضعف المهارات (متوسط الإتقان)</h3>${barChart(sk,{col:heatCol,label:'أضعف المهارات'})}</div><div class="card"><h3>🏆 ترتيب الفصول هذا الأسبوع</h3>${barChart(lg.slice(0,6).filter(x=>x[1]>0),{pct:false,label:'الدوري'})}</div>
  <div class="card"><h3>🪞 نسبة الفهم بعد الدروس</h3>${lineChart(trendBy(S.reflections,'understood'),{label:'الفهم'})}</div><div class="card"><h3>📡 متوسط نتائج الاختبارات القصيرة</h3>${lineChart(trendBy(S.results,'score'),{c:'#0d9488',label:'النتائج'})}</div></div>
@@ -565,7 +566,7 @@ V.settings=()=>{const st=S.settings;const fld=(k,l,v,t='')=>`<label class="f">${
  <div class="card"><h3>🎚️ الحدود</h3><div class="fgrid">${fld('master','حد الإتقان ٪',st.master,'inputmode="decimal"')}${fld('pass','درجة النجاح ٪',st.pass,'inputmode="decimal"')}${fld('exc','درجة التميز ٪',st.exc,'inputmode="decimal"')}</div></div>
  <div class="card"><h3>📝 القوائم القابلة للتعديل</h3><p class="small muted">عنصر في كل سطر. تُضاف العناصر الجديدة تلقائياً أيضاً عند الإدخال أو الاستيراد.</p><div class="fgrid">${Object.entries(LISTS).map(([k,l])=>`<label class="f">${l} (${AR(st.lists[k].length)})<textarea data-list="${k}" rows="5">${esc(st.lists[k].join('\n'))}</textarea></label>`).join('')}</div>
  <p class="small">قوائم أخرى: <a href="#skills">المهارات ونواتج التعلم</a> · <a href="#ops">مواعيد الاختبارات</a> · <a href="#students">الطلاب</a></p></div>
- <div class="card"><h3>💾 النسخ الاحتياطي والمشاركة بين الأجهزة</h3><div class="acts"><button class="btn sm" data-act="backup">⬇️ تنزيل نسخة احتياطية (JSON)</button><button class="btn ghost sm" data-act="restore">⬆️ استعادة / دمج من ملف</button><button class="btn ghost sm" data-act="xlsxAll">📤 تصدير كل البيانات Excel</button><button class="btn ghost sm" data-act="roCopy">👁️ نسخة للقراءة فقط (HTML) للزملاء</button></div>
+ <div class="card"><h3>💾 النسخ الاحتياطي والمشاركة بين الأجهزة</h3><div class="acts"><button class="btn gold sm" data-act="expMgr">📤 تصدير للمدير</button><button class="btn sm" data-act="backup">⬇️ تنزيل نسخة احتياطية (JSON)</button><button class="btn ghost sm" data-act="restore">⬆️ استعادة / دمج من ملف</button><button class="btn ghost sm" data-act="xlsxAll">📤 تصدير كل البيانات Excel</button><button class="btn ghost sm" data-act="roCopy">👁️ نسخة للقراءة فقط (HTML) للزملاء</button></div>
  <p class="small muted">للمشاركة داخل المدرسة دون سحابة: أرسل ملف النسخة لزميلك ليستعيده (استبدال أو دمج)، أو أرسل نسخة HTML للعرض فقط.</p><h3 style="margin-top:10px">🕒 نسخ تلقائية على الجهاز</h3><div id="snapList" class="small">…</div></div>
  <div class="card"><h3>📱 التطبيق</h3><div class="acts"><button class="btn sm" data-act="install">⬇️ تثبيت التطبيق</button><button class="btn ghost sm" data-act="persist">🔒 طلب تخزين دائم</button><span id="persistInd" class="small muted"></span></div><p class="small muted">على آيفون: Safari ← زر المشاركة ← «إضافة إلى الشاشة الرئيسية».</p>
  <div class="acts" style="margin-top:10px"><button class="btn ghost sm" data-act="loadSample">🧪 تحميل بيانات تجريبية</button>${st.sample?'<button class="btn ghost sm" data-act="clearSample">حذف البيانات التجريبية</button>':''}<button class="btn red sm" data-act="wipe">حذف كل البيانات</button></div></div>`};
