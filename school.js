@@ -10,7 +10,7 @@ const nQ=n=>n===0?'٠ أسئلة':n===1?'سؤال واحد':n===2?'سؤالان'
 const SQG=['الثالث الابتدائي','السادس الابتدائي','الثالث المتوسط','أي صف'];
 /* level: mastered / developing / struggling */
 function lvlOf(m){if(m==null)return null;return m>=TH().m?'ok':m>=TH().p?'dev':'low'}
-function lvlName(l){const g=isGirls();return{ok:g?'متقنة':'متقن',dev:g?'نامية':'نامٍ',low:g?'متعثّرة':'متعثّر'}[l]||'لم يُقس'}
+function lvlName(l){const g=isGirls();return{ok:g?'متقنة':'متقن',dev:'قيد الإتقان',low:g?'متعثّرة':'متعثّر'}[l]||'لم يُقس'}
 const LVC={ok:'#15803d',dev:'#1d4ed8',low:'#b91c1c'};
 const lvlTag=l=>l?`<span class="tag lv lv-${l}">${l==='ok'?'🟢':l==='dev'?'🔵':'🔴'} ${lvlName(l)}</span>`:'<span class="tag">لم يُقس</span>';
 /* ---------- results aggregation per track ---------- */
