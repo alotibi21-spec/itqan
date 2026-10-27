@@ -170,3 +170,25 @@ body:not([data-theme=dark]),html:not([data-theme=dark]) body{background:linear-g
 .wkin:focus{outline:2px solid var(--gold);border-color:var(--gold)}
 @media (max-width:640px){.wkin{width:52px}.wkitem{grid-template-columns:auto 1fr}.wkitem .tag{grid-column:1/-1;justify-self:start}}
 @media print{.wkin{border:none;background:none;width:auto}}
+/* v1.13.0 نُخبة نافس */
+.nk-hero{border-radius:20px;padding:1.1rem 1.3rem;color:#fff;background:linear-gradient(135deg,#0b1f3a,#1e4fa3 70%,#3b82c4);box-shadow:var(--sh);position:relative;overflow:hidden;margin-bottom:.8rem}
+.nk-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 40%,rgba(233,196,92,.25) 50%,transparent 60%)}
+.nk-hero h3{margin:0 0 .3rem;font-size:1.5rem;background:var(--g-gold);-webkit-background-clip:text;background-clip:text;color:transparent}.nk-hero p{margin:0;opacity:.92}
+.nk-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin:.6rem 0}
+.nk-lv{border:1.5px solid var(--line);background:var(--glass);backdrop-filter:blur(8px);border-radius:16px;padding:.7rem .5rem;cursor:pointer;color:var(--text);font:inherit;display:flex;flex-direction:column;align-items:center;gap:.15rem}
+.nk-lv b{font-size:1.05rem}.nk-lv small{color:var(--muted)}.nk-lv.on{border-color:var(--gold);background:linear-gradient(160deg,#0b1f3a,#1e4fa3);color:#fff;box-shadow:0 0 0 3px rgba(201,162,39,.25)}.nk-lv.on small{color:var(--gold2)}
+.nk-sub{display:flex;flex-wrap:wrap;gap:.45rem;align-items:center;margin:.5rem 0 .8rem}
+.nk-sub .chip{border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:999px;padding:.4rem .9rem;font:inherit;cursor:pointer}.nk-sub .chip.on{background:var(--g-gold);color:#0b1f3a;font-weight:700;border-color:transparent}.nk-sub .chip span{opacity:.7;font-size:.85em}
+.nk-card{background:var(--glass);backdrop-filter:blur(10px);border:1px solid rgba(201,162,39,.35)}
+.nk-prog{display:flex;justify-content:space-between;gap:.5rem;flex-wrap:wrap;align-items:center}.nk-bar{height:8px;background:var(--line);border-radius:9px;margin:.5rem 0 .8rem;overflow:hidden}.nk-bar i{display:block;height:100%;background:var(--g-gold);transition:width .3s}
+.nk-psg{background:var(--soft);border-right:4px solid var(--gold);border-radius:12px;padding:.7rem 1rem;margin:.6rem 0;line-height:1.9}
+.nk-q{font-size:1.2rem;font-weight:700;margin:.6rem 0}
+.nk-opts{display:grid;grid-template-columns:1fr 1fr;gap:.55rem}@media(max-width:600px){.nk-opts{grid-template-columns:1fr}.nk-tabs{gap:.35rem}.nk-lv b{font-size:.9rem}}
+.nk-opts button{text-align:right;font:inherit;font-size:1.05rem;padding:.75rem 1rem;border-radius:14px;border:1.5px solid var(--line);background:var(--card);color:var(--text);cursor:pointer}
+.nk-opts button b{display:inline-grid;place-items:center;width:1.8rem;height:1.8rem;border-radius:50%;background:#0b1f3a;color:var(--gold2);margin-left:.4rem}
+.nk-opts button:hover:not([disabled]){border-color:var(--gold)}.nk-opts .ok{border-color:var(--ok);background:rgba(21,128,61,.12)}.nk-opts .no{border-color:var(--bad);background:rgba(185,28,28,.1)}
+.nk-fb{margin:.8rem 0;padding:.7rem 1rem;border-radius:12px;font-weight:700}.nk-fb span{font-weight:400}.nk-fb.ok{background:rgba(21,128,61,.12);color:var(--ok)}.nk-fb.no{background:rgba(185,28,28,.1);color:var(--bad)}
+.nk-res{text-align:center}.nk-score{font-size:2.4rem;font-weight:800;background:var(--g-gold);-webkit-background-clip:text;background-clip:text;color:transparent}.nk-tags{display:flex;flex-wrap:wrap;gap:.35rem;justify-content:center}
+.nk-ws{font-size:1.1rem}.nk-wsh{text-align:center;border-bottom:2px solid var(--gold);margin-bottom:.6rem}.nk-wsh h2{margin:.2rem 0;color:var(--navy)}.nk-fields{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem;margin:.5rem 0}
+.nk-wsl li{margin-bottom:.9rem;break-inside:avoid}.nk-wso{display:grid;grid-template-columns:repeat(2,1fr);gap:.25rem 1rem}.nk-wso .k{font-weight:800;color:var(--ok);text-decoration:underline}
+@media print{.nk-ws{box-shadow:none!important;border:0!important;font-size:14pt}.nk-hero,.nk-src{display:none!important}}
